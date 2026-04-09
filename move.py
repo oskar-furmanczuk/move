@@ -14,13 +14,13 @@ last_mouse_pos = pyautogui.position()
 last_movement_time = time.time()
 
 def move_mouse_randomly():
-    dx = random.randint(-50, 50)
-    dy = random.randint(-50, 50)
+    dx = random.randint(-150, 150)
+    dy = random.randint(-150, 150)
     current_x, current_y = pyautogui.position()
     screen_w, screen_h = pyautogui.size()
     new_x = max(0, min(screen_w - 1, current_x + dx))
     new_y = max(0, min(screen_h - 1, current_y + dy))
-    pyautogui.moveTo(new_x, new_y, duration=0.3)
+    pyautogui.moveTo(new_x, new_y, duration=0.6)
     print(f"Mouse moved to ({new_x}, {new_y}) due to inactivity")
 
 while True:
